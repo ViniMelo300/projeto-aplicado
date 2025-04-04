@@ -1,0 +1,59 @@
+1. Gestão de Produtos
+
+-Listar produtos: Retorna uma lista de produtos disponíveis na loja.
+
+-Detalhes do produto: Retorna informações detalhadas de um produto específico (nome, preço, descrição, estoque, etc.).
+
+-Buscar produtos: Permite buscar produtos por nome, categoria, preço, tamanho, cor, etc.
+
+-Gerenciar estoque: Atualiza a quantidade disponível de um produto.
+
+-Gerenciar categorias: Adicionar, remover ou editar categorias de produtos.
+
+2. Carrinho de Compras
+
+-Adicionar item ao carrinho: Adiciona um produto ao carrinho do usuário.
+
+-Remover item do carrinho: Remove um produto do carrinho.
+
+-Atualizar quantidade de itens: Modifica a quantidade de um item no carrinho.
+
+-Obter detalhes do carrinho: Lista os produtos que estão no carrinho do usuário.
+
+3. Gestão de Pedidos
+
+-Criar pedido: Finaliza a compra e gera um pedido.
+
+-Consultar status do pedido: Retorna o status do pedido (pendente, enviado, entregue, etc.).
+
+-Cancelar pedido: Permite o cancelamento de um pedido dentro do prazo.
+
+4. Autenticação e Gestão de Usuários
+
+-Registro de usuário: Cria uma nova conta para o cliente.
+
+-Login: Permite que um usuário faça login na plataforma.
+
+-Recuperação de senha: Envia um link para redefinição de senha.
+
+Atualização de perfil: Permite que o usuário edite suas informações pessoais.
+
+5. Pagamentos
+
+-Processar pagamento: Integração com gateways de pagamento para processar cartões de crédito, Pix, boleto, etc.
+
+-Validar pagamento: Confirma se o pagamento foi aprovado.
+
+-Gerenciar reembolsos: Permite solicitar o estorno de um pagamento.
+
+6. Frete e Logística
+
+-Calcular frete: Retorna o valor e prazo estimado de entrega.
+
+-Gerenciar endereços: Permite adicionar, remover ou editar endereços de entrega.
+
+-Rastreamento de pedidos: Retorna informações sobre a entrega do pedido.
+
+9. Integração com Marketplaces e Redes Sociais
+
+-Autenticação via redes sociais: Permite login usando Facebook, Google, etc.
