@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Título da Página</title>
-  <link rel="stylesheet" href="style.css"> <!-- Opcional: para CSS externo -->
+  <link rel="stylesheet" href="index.css"> <!-- Opcional: para CSS externo -->
 </head>
 <body>
 
   <header>
-    <h1>Bem-vindo!</h1>
+    <h1 class="titulo">Bem-vindo!</h1>
   </header>
 
   <nav>
@@ -24,12 +24,13 @@
     <section>
       <h2>Seção Principal</h2>
       <p>Conteúdo da sua página vai aqui.</p>
+      <button class="btnPrincipal" onclick="mostrarmensagem()">Clique aqui</button>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 - Todos os direitos reservados.</p>
   </footer>
-
+  <script src="main.js" defer></script>
 </body>
 </html>
