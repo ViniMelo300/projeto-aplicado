@@ -3,34 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título da Página</title>
+  <title>Abelardo Clothes</title>
   <link rel="stylesheet" href="index.css"> <!-- Opcional: para CSS externo -->
 </head>
 <body>
-
   <header>
-    <h1 class="titulo">Bem-vindo!</h1>
+    <nav>
+      <a href="/" class="logo">Abelardo</a>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="/">Masculino</a></li>
+        <li><a href="/">Feminino</a></li>
+        <li><a href="/">Acessórios</a></li>
+        <li><a href="/">Sobre</a></li>
+      </ul>
+      <img class="logo-carrinho" src="./img/carrinho-de-compras (1).png" alt="logo-carrinho">
+    </nav>
   </header>
-
-  <nav>
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-
   <main>
-    <section>
-      <h2>Seção Principal</h2>
-      <p>Conteúdo da sua página vai aqui.</p>
-      <button class="btnPrincipal" onclick="mostrarmensagem()">Clique aqui</button>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 - Todos os direitos reservados.</p>
-  </footer>
-  <script src="main.js" defer></script>
+  </main>
+  <script src="./mobile navbar.js" defer></script>
 </body>
 </html>
