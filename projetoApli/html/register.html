@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <main>
+        <form id="formulario" class="forms" action="">
+            <h1>Cadastre-se</h1>
+            <div id="msg-error"></div>
+            <div id="msg-success"></div>
+
+            <div class="label-forms">
+                <input type="text" id="nome" placeholder="" required>
+                <label id="label-nome" for="nome">Nome</label>
+            </div>
+            <div class="label-forms">
+                <input type="text" id="nome-usuario" placeholder="" required>
+                <label id="label-usuario" for="nome-usuario">Nome de usuário</label>
+            </div>
+            <div class="label-forms">
+                <input type="password" id="senha" placeholder="" required>
+                <label id="label-senha" for="senha">Senha</label>
+                <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+            <div class="label-forms">
+                <input type="password" id="confirmar-senha" placeholder="" required>
+                <label id="label-confirmar" for="confirmar-senha">Confirmar senha</label>
+                <i id="verConfirmarSenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+            <div class="justify-center">
+                <button type="button" onclick="cadastrar()">Cadastrar</button>
+            </div>
+        </form>
+    </main>
+    <script defer src="../js/register.js"></script>
+</body>
+</html>

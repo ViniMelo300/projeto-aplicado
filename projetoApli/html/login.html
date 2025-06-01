@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
 
     <title>Login</title>
 </head>
 <body>
     <main class="container">
-        <form>
+        <form id="login-form">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="email" placeholder="Usuário">
+                <input type="email" placeholder="Email" id="email" name="email" required>
                 <i class="bx bxs-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Senha">
+                <input type="password" placeholder="Senha" id="senha" name="senha" required>
                 <i class="bx bxs-lock-alt"></i>
             </div>
             <div class="remember-forgot">
@@ -28,11 +28,13 @@
                 <a href="#">Esqueci a senha</a>
             </div>
 
-            <button class="login" type="submit">Login</button>
+            <button onclick="entrar()" id="btn-login" class="login" type="submit">Login</button>
+            <p id="message-error" class="message-error"></p>
             <div class="register-link">
-                <p>Não tem uma conta ? <a href="#">Cadastre-se</a></p>
+                <p>Não tem uma conta ? <a href="./register.html">Cadastre-se</a></p>
             </div>
         </form>
     </main>
+    <script defer src="../js/login.js"></script>
 </body>
 </html>

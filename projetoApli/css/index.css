@@ -22,6 +22,10 @@ a:hover {
   letter-spacing: 4px;
 }
 
+.logado-nome {
+  color: white;
+}
+
 .logo-carrinho {
   max-width: 24px;
   max-height: 24px;
