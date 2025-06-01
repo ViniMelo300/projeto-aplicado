@@ -10,7 +10,6 @@
   <header>
     <nav>
       <a href="/" class="logo">Abelardo</a>
-      <p id="logado" class="logado-nome"></p>
       <div class="mobile-menu">
         <div class="line1"></div>
         <div class="line2"></div>
@@ -22,7 +21,10 @@
         <li><a href="/">Acessórios</a></li>
         <li><a href="/">Sobre</a></li>
       </ul>
-      <img class="logo-carrinho" src="./projetoApli/img/carrinho-de-compras (1).png" alt="logo-carrinho" id="btn-acao">
+      <div class="cart-icon-container">
+        <img class="logo-carrinho" src="./projetoApli/img/carrinho-de-compras (1).png" alt="logo-carrinho" id="btn-carrinho">
+        <span id="cart-counter">0</span>
+      </div>
     </nav>
   </header>
   <main>
@@ -31,82 +33,24 @@
       <div class="product-info">
         <h3 class="product-title">Casaco de futebol americano</h3>
         <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+        <button class="add-to-cart-btn" data-id="1" data-name="Casaco de futebol americano" data-price="45.99" data-image="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png">Adicionar ao Carrinho</button>
       </div>
     </div>
   </main>
+
+  <div id="carrinho-overlay"></div>
+  <aside id="carrinho-sidebar">
+    <div class="carrinho-header">
+      <h2>Meu carrinho</h2>
+      <button id="close-carrinho-btn">&times;</button>
+    </div>
+    <div id="carrinho-itens-container"></div>
+    <div class="carrinho-footer">
+      <h3>Total: <span id="carrinho-total">R$0,00</span></h3>
+      <button class="checkout-btn">Finalizar Compra</button>
+    </div>
+  </aside>
+
   <script src="./projetoApli/js/main.js" defer></script>
   <script src="./projetoApli/js/mobile navbar.js" defer></script>
 </body>
