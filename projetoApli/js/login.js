@@ -54,7 +54,7 @@ function entrar() {
         let token = mathRandom + mathRandom
 
         localStorage.setItem('token', token)
-        localStorage.setItem('userLogado', JSON,stringfy(userValid))
+        localStorage.setItem('userLogado', JSON.stringify(userValid));
     }
     else {
         usuario.setAttribute('style', 'border-color: red')

@@ -10,6 +10,19 @@
 a {
   color: #fff;
   text-shadow: none;
+  text-decoration: none;
+}
+
+#nome-tela--inicial {
+  color: #fff;
+  text-shadow: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+#nome-tela--inicial:hover{
+  color: #333;
 }
 
 a:hover {
@@ -17,13 +30,16 @@ a:hover {
 }
 
 .logo {
+  color: #fff;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.logado-nome {
-  color: rgb(24, 4, 4);
+.logo:hover {
+  color: #333;
 }
 
 .logo-carrinho {
@@ -242,12 +258,17 @@ nav {
 .checkout-btn {
   width: 100%;
   padding: 15px;
-  background-color: #28a745;
-  color: white;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;
+  transition: background-color ease-in-out 0.3s, color ease 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #27c52f;
 }
 
 main {

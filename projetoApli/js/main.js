@@ -3,13 +3,37 @@ if(localStorage.getItem("token") == null) {
     window.location.href = "./projetoApli/html/login.html";
 }
 
-let userLogin = JSON.parse(localStorage.getItem("userLogado"));
+document.addEventListener('DOMContentLoaded', () => {
+    const userLogadoJSON = localStorage.getItem('userLogado');
 
+    if(userLogadoJSON) {
+        const dadoUsuario = JSON.parse(userLogadoJSON);
+        const bemVindo = document.getElementById('nome-tela--inicial');
+        bemVindo.innerHTML = `Bem-vindo, ${dadoUsuario.nome}!`
+    }
 
+    const token = localStorage.getItem('token');
+    const logoutbotao = document.getElementById('logout-btn');
 
+    if(token && logoutbotao) {
 
+        logoutbotao.addEventListener('click', () => {
+            event.preventDefault();
+
+            localStorage.removeItem('token');
+            localStorage.removeItem('userLogado');
+
+            alert('Você saiu com sucesso!');
+            window.location.href = './projetoApli/html/login.html';
+        });
+    }
+    else if(logoutbotao) {
+        logoutbotao.style.display = 'none';
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
+
     const cartIcon = document.getElementById('btn-carrinho');
     const cartSidebar = document.getElementById('carrinho-sidebar');
     const closeCartBtn = document.getElementById('close-carrinho-btn');
