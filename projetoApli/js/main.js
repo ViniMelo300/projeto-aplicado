@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
         else {
             carrinho.forEach(item => {
                 const carrinhoItem = document.createElement('div');
-                carrinhoItem.className = 'cart-item';
+                carrinhoItem.classList.add('cart-item');
                 carrinhoItem.innerHTML = `
                 <img src="${item.image}" alt="${item.name}">
                 <div class="cart-item-info">
                     <h4>${item.name}</h4>
                     <p>R$${item.price.toFixed(2)}</p>
-                    <p>Qtd: ${item.quantity}</p>
+                    <p>Qquantidade: ${item.quantity}</p>
                 </div>
                 <button class="remove-item-btn" data-id="${item.id}">&times;</button>
                 `;
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const total = carrinho.reduce((sum,item) => sum + (item.price * item.quantity), 0);
-        cartTotalElem.textContent - `R$${total.toFixed(2)}`;
+        cartTotalElem.textContent = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
         const totalItens = carrinho.reduce((sum,item) => sum + item.quantity, 0);
         cartCounterElem.textContent = totalItens;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             existingItem.quantity++;
         }
         else{
-            carrinho.push({id, name, price, image, quantity: 1});
+            carrinho.push({id, name, price, image, quantity: 1});  
         }
 
         salvarCarrinho();
