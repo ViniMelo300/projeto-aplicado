@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem('userLogado');
 
             alert('Você saiu com sucesso!');
-            window.location.href = './projetoApli/html/login.html';
+            setTimeout(() => {
+            window.location.href = './projetoApli/html/login.html'
+            }, 2000);
         });
     }
     else if(logoutbotao) {
@@ -106,8 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
         abrirCarrinho();
     };
 
+    // CÓDIGO CORRIGIDO
     const removerDoCarrinho = (id) => {
-        carrinho = carrinho.filter(item => item.id !== id);
+        // 1. Encontra o OBJETO do item no carrinho
+        const item = carrinho.find(item => item.id === id);
+
+        // 2. Se o item realmente existir...
+        if (item) {
+        // 3. Diminui a quantidade dele em 1
+        item.quantity--;
+
+        // 4. Se a quantidade chegar a 0, remove o item do carrinho
+        if (item.quantity === 0) {
+            carrinho = carrinho.filter(cartItem => cartItem.id !== id);
+        }
+        }
+
+        // 5. Salva e renderiza o carrinho atualizado
         salvarCarrinho();
         renderCarrinho();
     };
@@ -129,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             removerDoCarrinho(id);
         }
     });
+    
 
     cartIcon.addEventListener('click', () => {abrirCarrinho();});
     closeCartBtn.addEventListener('click', () => {fecharCarrinho()});

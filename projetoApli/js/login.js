@@ -48,7 +48,10 @@ function entrar() {
     });
 
     if(usuario.value == userValid.user && senha.value == userValid.senha){
-        window.location.href = '../../index.html'
+
+        setTimeout(() => {
+            window.location.href = '../../index.html'
+        }, 2500)
 
         let mathRandom = Math.random().toString(16).substring(2)
         let token = mathRandom + mathRandom
