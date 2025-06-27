@@ -6,6 +6,60 @@
   <title>Abelardo Clothes</title>
   <link rel="stylesheet" href="./projetoApli/css/index.css"> 
 </head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const supabase = supabase.createClient(
+    'https://nloyoljixuegxdehipiv.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sb3lvbGppeHVlZ3hkZWhpcGl2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkwNzY1ODUsImV4cCI6MjA2NDY1MjU4NX0.BmCjy4ZFz-4lrKuvXm4_w7dP4VSItK7Djk4FKEuYwTc'
+  );
+
+  async function carregarProdutos() {
+    const { data, error } = await supabase
+      .from('produto')
+      .select(`
+        id,
+        nome,
+        descricao,
+        imagem,
+        item_produto (
+          preco
+        )
+      `);
+
+    if (error) {
+      console.error('Erro ao buscar produtos:', error.message);
+      return;
+    }
+
+    const container = document.getElementById('produtos-container');
+    container.innerHTML = '';
+
+    data.forEach(produto => {
+      const preco = produto.item_produto?.[0]?.preco ?? 'Indisponível';
+      const imagem = produto.imagem || './projetoApli/img/imagem_padrao.png';
+
+      container.innerHTML += `
+        <div class="product-cards">
+          <img class="product-image" src="${imagem}" alt="${produto.nome}">
+          <div class="product-info">
+            <h3 class="product-title">${produto.nome}</h3>
+            <p class="product-price">R$ ${preco}</p>
+            <button class="add-to-cart-btn"
+              data-id="${produto.id}"
+              data-name="${produto.nome}"
+              data-price="${preco}"
+              data-image="${imagem}">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  carregarProdutos();
+</script>
+
 <body>
   <header>
     <nav>
@@ -30,15 +84,9 @@
     </nav>
   </header>
   <main>
-    <div class="product-cards">
-      <img class="product-image" src="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png" alt="casaco de futebol americano">
-      <div class="product-info">
-        <h3 class="product-title">Casaco de futebol americano</h3>
-        <p class="product-price">R$45,99</p>
-        <button class="add-to-cart-btn" data-id="1" data-name="Casaco de futebol americano" data-price="45.99" data-image="./projetoApli/img/renderizacao-de-natureza-morta-de-exibicao-de-jaquetas-removebg-preview.png">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-  </main>
+  <div id="produtos-container" class="product-cards"></div>
+</main>
+
 
   <div id="carrinho-overlay"></div>
   <aside id="carrinho-sidebar">
